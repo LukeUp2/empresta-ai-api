@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "b0H+CuYDBpJPGhwH6ZIMW8KrdkKFi9YIoj2tybUt3IfvWG6GsVrqRA05dMmnB/HghXqw3TyBBpvNGFZqgEIHXQ==",
+  "dgSpecHash": "/BsT0aW8GUS+FWx67ofSf5TnJVqmCnkYxau7/QdpeTCHl0i+HAfB6D+PZsOMX7tVteqCfcQe25Tz1BZKeiveKg==",
   "success": true,
   "projectFilePath": "/home/joaofreitas/Dev/EmprestaAi/api/api.csproj",
   "expectedPackageFiles": [
+    "/home/joaofreitas/.nuget/packages/fluentvalidation/12.0.0/fluentvalidation.12.0.0.nupkg.sha512",
     "/home/joaofreitas/.nuget/packages/microsoft.aspnetcore.openapi/8.0.16/microsoft.aspnetcore.openapi.8.0.16.nupkg.sha512",
     "/home/joaofreitas/.nuget/packages/microsoft.entityframeworkcore/9.0.5/microsoft.entityframeworkcore.9.0.5.nupkg.sha512",
     "/home/joaofreitas/.nuget/packages/microsoft.entityframeworkcore.abstractions/9.0.5/microsoft.entityframeworkcore.abstractions.9.0.5.nupkg.sha512",
