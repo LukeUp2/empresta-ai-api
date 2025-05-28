@@ -1,0 +1,8 @@
+name: empresta-ai-db
+
+services:
+  pg:
+    image: name-of-the-image-postgres
+    ports: -"5432:5432"
+    environment:
+      - name=value
