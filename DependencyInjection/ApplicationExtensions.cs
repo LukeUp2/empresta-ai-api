@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using api.Data;
 using api.Repositories;
+using api.UseCases.User.Create;
 using Microsoft.EntityFrameworkCore;
 
 namespace api.DependencyInjection
@@ -19,7 +20,7 @@ namespace api.DependencyInjection
 
         private static void AddUseCases(IServiceCollection services)
         {
-
+            services.AddScoped<CreateUserUseCase>();
         }
 
         private static void AddRepositories(IServiceCollection services)

@@ -1,3 +1,6 @@
+using api.DependencyInjection;
+using api.Filters;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddRouting(opt => opt.LowercaseUrls = true);
 
+builder.Services.AddMvc(opt => opt.Filters.Add<ExceptionFilter>());
+
+builder.Services.AddApplication(builder.Configuration);
 
 var app = builder.Build();
 

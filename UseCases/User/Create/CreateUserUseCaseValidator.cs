@@ -12,7 +12,7 @@ namespace api.UseCases.User.Create
         public CreateUserUseCaseValidator()
         {
             RuleFor(x => x.Name).NotEmpty().WithMessage("The name is required");
-            RuleFor(x => x.Email).NotEmpty().WithMessage("The email is required");
+            RuleFor(x => x.Email).EmailAddress().WithMessage("The email is invalid");
             RuleFor(x => x.Password).MinimumLength(6).WithMessage("The passord must have at least 6 characters");
         }
     }

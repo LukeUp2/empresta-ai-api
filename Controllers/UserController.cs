@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using api.Requests;
+using api.UseCases.User.Create;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api.Controllers
@@ -11,8 +13,9 @@ namespace api.Controllers
     public class UserController : ControllerBase
     {
         [HttpPost("register")]
-        public IActionResult Register()
+        public IActionResult Register(CreateUserRequest request, [FromServices] CreateUserUseCase useCase)
         {
+            useCase.Execute(request);
             return Ok();
         }
 
