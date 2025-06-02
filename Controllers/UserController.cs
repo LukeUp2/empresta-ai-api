@@ -13,10 +13,10 @@ namespace api.Controllers
     public class UserController : ControllerBase
     {
         [HttpPost("register")]
-        public IActionResult Register(CreateUserRequest request, [FromServices] CreateUserUseCase useCase)
+        public async Task<IActionResult> RegisterAsync(CreateUserRequest request, [FromServices] CreateUserUseCase useCase)
         {
-            useCase.Execute(request);
-            return Ok();
+            var response = await useCase.Execute(request);
+            return Ok(response);
         }
 
         [HttpGet("me")]

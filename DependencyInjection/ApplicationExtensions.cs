@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using api.Data;
 using api.Repositories;
+using api.Services;
 using api.UseCases.User.Create;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,7 +16,9 @@ namespace api.DependencyInjection
         {
             AddUseCases(services);
             AddDbContext(services, configuration);
+            AddPasswordEncrypter(services, configuration);
             AddRepositories(services);
+            AddUnitOfWork(services);
         }
 
         private static void AddUseCases(IServiceCollection services)
@@ -36,5 +39,18 @@ namespace api.DependencyInjection
                 opt.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
             });
         }
+
+        private static void AddUnitOfWork(IServiceCollection services)
+        {
+            services.AddScoped<UnitOfWork>();
+        }
+
+        private static void AddPasswordEncrypter(IServiceCollection services, IConfiguration configuration)
+        {
+            var additionalKey = configuration.GetValue<string>("Configuration:PasswordAdditionalKey");
+            services.AddScoped(opt => new PasswordEncrypter(additionalKey!));
+        }
+
+
     }
 }
